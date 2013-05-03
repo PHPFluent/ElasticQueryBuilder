@@ -1,28 +1,20 @@
 <?php
 namespace PHPFluent\ElasticQueryBuilder;
-error_reporting(0);
 
 class Query
 {
-    public $query;
-
-    public function __construct()
+    public function __call($field, $value)
     {
-        $this->query = new \stdClass;
-    }
-
-    public function __set($field, $value)
-    {
-        $this->query->$field = $value;
-    }
-
-    public function __get($field)
-    {
-        if (! isset($this->query->$field)) {
-            $this->query->$field = new \stdClass;
+        $data = new self;
+        if (count($value) > 0) {
+            $data = $value[0];
         }
 
-        return $this->query->$field;
+        if ( ! isset($this->$field)) {
+            $this->$field = $data;
+        }
+
+        return $this->$field;
     }
 
     public function __toString()
