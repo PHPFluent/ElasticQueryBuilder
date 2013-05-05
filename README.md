@@ -6,7 +6,7 @@ A fluent query builder for Elastic Search.
 
 Install:
   ```shell
-  composer.phar install phpfluent/elastic-query-builder:dev-master
+  composer.phar require phpfluent/elastic-query-builder:dev-master
   ```
 Usage:
   ```php
@@ -19,6 +19,7 @@ Usage:
 
 Test:
   ```shell
-  composer.phar install --dev phpfluent/elastic-query-builder:dev-master
+  cd phpfluent/elastic-query-builder
+  composer.phar install --dev
   make test
   ```
