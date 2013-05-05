@@ -1,8 +1,24 @@
 <?php
+/**
+ * Copyright (c) 2013, PHPFluent.
+ */
 namespace PHPFluent\ElasticQueryBuilder;
 
+/**
+ * A json builder
+ *
+ * @author Kinn Coelho Julião <kinncj@gmail.com>
+ */
 class Query
 {
+    /**
+     * Create nested objects and set its value
+     *
+     * @param string $field The attribute
+     * @param mixed  $value The value
+     *
+     * @return Query $this->$field;
+     */
     public function __call($field, $value)
     {
         $data = new self;
@@ -17,6 +33,11 @@ class Query
         return $this->$field;
     }
 
+    /**
+     * Serialize to JSON
+     *
+     * @return string $this
+     */
     public function __toString()
     {
         return json_encode($this);

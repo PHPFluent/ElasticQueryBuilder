@@ -1,0 +1,6 @@
+language: php
+script: make test-coverage-text
+
+php:
+  - 5.3
+  - 5.4
