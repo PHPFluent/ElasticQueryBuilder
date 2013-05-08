@@ -20,14 +20,14 @@ class NumericRange
      * {@inherit}
      *
      * @param string $field The attribute name
-     * @param string $lt    Less than
+     * @param string $lte   Less than
      * @param string $gte   Greater than 
      */
-    public function __construct($field, $lt, $gte)
+    public function __construct($field, $lte, $gte)
     {
         $this->numeric_range              = new \stdClass;
         $this->numeric_range->$field      = new \stdClass;
-        $this->numeric_range->$field->lt  = $lt;
+        $this->numeric_range->$field->lte = $lte;
         $this->numeric_range->$field->gte = $gte;
     }
 }
