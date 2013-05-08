@@ -23,10 +23,10 @@ class GeoDistance
      * @param string $distance   The distance, eg: 20km
      * @param string $coordinate array("lat"=>222,"lon"=>-222) 
      */
-    public function __construct($field, $distance, array $coordinate)
+    public function __construct($field, $distance, array $coordinate = array())
     {
         if ( ! isset($coordinate['lat']) || ! isset($coordinate['lon'])) {
-            throw new \InvalidArgumentException("Invalid coordinates", 1);
+            return;
             
         }
 
