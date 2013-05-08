@@ -25,15 +25,13 @@ class GeoDistance
      */
     public function __construct($field, $distance, array $coordinate = array())
     {
-        if ( ! isset($coordinate['lat']) || ! isset($coordinate['lon'])) {
-            return;
-            
-        }
 
-        $this->geo_distance              = new \stdClass;
-        $this->geo_distance->distance    = $distance;
-        $this->geo_distance->$field      = new \stdClass;
-        $this->geo_distance->$field->lat = $coordinate['lat'];
-        $this->geo_distance->$field->lon = $coordinate['lon'];
+        $this->geo_distance           = new \stdClass;
+        $this->geo_distance->distance = $distance;
+        $this->geo_distance->$field   = new \stdClass;
+
+        foreach ($coordinate as $name=>$value) {
+            $this->geo_distance->$field->$name = $value;
+        }
     }
 }
