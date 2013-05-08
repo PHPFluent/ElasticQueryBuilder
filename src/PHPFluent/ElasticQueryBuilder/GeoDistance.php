@@ -28,10 +28,10 @@ class GeoDistance
 
         $this->geo_distance           = new \stdClass;
         $this->geo_distance->distance = $distance;
-        $this->geo_distance->$field   = new \stdClass;
 
         foreach ($coordinate as $name=>$value) {
-            $this->geo_distance->$field->$name = $value;
+            $fieldName                      = "{$field}.{$name}";
+            $this->geo_distance->$fieldName = $value;
         }
     }
 }
