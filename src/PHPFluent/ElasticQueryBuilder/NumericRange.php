@@ -14,20 +14,20 @@ class NumericRange
     /**
      * @var stdClass $numeri_range The Numeric range representation
      */
-    public $numeric_range;
+    public $range;
 
     /**
      * {@inherit}
      *
      * @param string $field The attribute name
      * @param string $lte   Less than
-     * @param string $gte   Greater than 
+     * @param string $gte   Greater than
      */
     public function __construct($field, $lte, $gte)
     {
-        $this->numeric_range              = new \stdClass;
-        $this->numeric_range->$field      = new \stdClass;
-        $this->numeric_range->$field->lte = $lte;
-        $this->numeric_range->$field->gte = $gte;
+        $this->range                        = new \stdClass;
+        $this->range->$field                = new \stdClass;
+        $this->range->$field->to            = (int) $lte;
+        $this->range->$field->from          = (int) $gte;
     }
 }
