@@ -2,8 +2,10 @@ ElasticQueryBuilder
 =====
 
 A fluent query builder for Elastic Search.
-[![Build Status](https://api.travis-ci.org/PHPFluent/ElasticQueryBuilder.png)](https://travis-ci.org/PHPFluent/ElasticQueryBuilder)
 
+| Tests | Releases | Downloads | 
+| ----- |-------- | ------- | ------------- |
+|[![Build Status](https://api.travis-ci.org/PHPFluent/ElasticQueryBuilder.png)](https://travis-ci.org/PHPFluent/ElasticQueryBuilder)|[![Latest Stable Version](https://poser.pugx.org/phpfluent/elastic-query-builder/v/stable.png)](https://packagist.org/packages/phpfluent/elastic-query-builder) [![Latest Stable Version](https://poser.pugx.org/phpfluent/elastic-query-builder/v/unstable.png)](https://packagist.org/packages/phpfluent/elastic-query-builder)|[![Total Downloads](https://poser.pugx.org/phpfluent/elastic-query-builder/downloads.png)](https://packagist.org/packages/phpfluent/elastic-query-builder)|
 Install:
   ```shell
   composer.phar require phpfluent/elastic-query-builder:dev-master
