@@ -23,5 +23,11 @@
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.x-dev"
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
     }
 }
