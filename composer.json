@@ -1,7 +1,7 @@
 {
     "name": "phpfluent\/elastic-query-builder",
     "description": "A fluent query builder for Elastic Search.",
-    "version": "1.0.0",
+    "version": "1.0",
     "type": "library",
     "time": "2013-02-24 21:00:00",
     "homepage": "http:\/\/github.com/PHPFluent/ElasticQueryBuilder",
@@ -27,7 +27,7 @@
     "minimum-stability": "stable",
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "1.1.x-dev"
         }
     }
 }
