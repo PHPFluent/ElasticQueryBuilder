@@ -20,7 +20,11 @@ before_script:
   - composer install --dev --no-interaction --prefer-source
 
 script:
-  - vendor/bin/phpunit --coverage-text --colors
+  - vendor/bin/phpunit --coverage-clover=coverage.clover --colors
+
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
 matrix:
   allow_failures:
