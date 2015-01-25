@@ -21,12 +21,12 @@ class Query
      */
     public function __call($field, $value)
     {
-        $data = new self;
+        $data = new self();
         if (count($value) > 0) {
             $data = $value[0];
         }
 
-        if ( ! isset($this->$field)) {
+        if (! isset($this->$field)) {
             $this->$field = $data;
         }
 

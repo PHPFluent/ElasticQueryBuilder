@@ -4,6 +4,8 @@
  */
 namespace PHPFluent\ElasticQueryBuilder;
 
+use stdClass;
+
 /**
  * Numeric Range representation
  *
@@ -25,8 +27,8 @@ class NumericRange
      */
     public function __construct($field, $lte, $gte)
     {
-        $this->range                        = new \stdClass;
-        $this->range->$field                = new \stdClass;
+        $this->range                        = new stdClass();
+        $this->range->$field                = new stdClass();
         $this->range->$field->to            = (int) $lte;
         $this->range->$field->from          = (int) $gte;
     }
