@@ -4,6 +4,8 @@
  */
 namespace PHPFluent\ElasticQueryBuilder;
 
+use stdClass;
+
 /**
  * Geo Distance representation
  *
@@ -21,15 +23,14 @@ class GeoDistance
      *
      * @param string $field      The attribute name
      * @param string $distance   The distance, eg: 20km
-     * @param string $coordinate array("lat"=>222,"lon"=>-222) 
+     * @param string $coordinate array("lat"=>222,"lon"=>-222)
      */
     public function __construct($field, $distance, array $coordinate = array())
     {
-
-        $this->geo_distance           = new \stdClass;
+        $this->geo_distance           = new stdClass();
         $this->geo_distance->distance = $distance;
 
-        foreach ($coordinate as $name=>$value) {
+        foreach ($coordinate as $name => $value) {
             $fieldName                      = "{$field}.{$name}";
             $this->geo_distance->$fieldName = $value;
         }

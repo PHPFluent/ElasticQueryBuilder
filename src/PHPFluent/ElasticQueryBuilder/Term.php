@@ -4,6 +4,8 @@
  */
 namespace PHPFluent\ElasticQueryBuilder;
 
+use stdClass;
+
 /**
  * Input representation
  *
@@ -24,7 +26,7 @@ class Term
      */
     public function __construct($label, $value)
     {
-        $this->term         = new \stdClass;
+        $this->term         = new stdClass();
         $this->term->$label = $value;
     }
 }
