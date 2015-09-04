@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) 2013, PHPFluent.
  */
@@ -7,19 +8,19 @@ namespace PHPFluent\ElasticQueryBuilder;
 use stdClass;
 
 /**
- * Geo Distance representation
+ * Geo Distance representation.
  *
  * @author Kinn Coelho Julião <kinncj@gmail.com>
  */
 class GeoDistance
 {
     /**
-     * @var stdClass $geo_distance The Geo distance representation
+     * @var stdClass The Geo distance representation
      */
     public $geo_distance;
 
     /**
-     * {@inherit}
+     * {@inherit}.
      *
      * @param string $field      The attribute name
      * @param string $distance   The distance, eg: 20km
@@ -27,11 +28,11 @@ class GeoDistance
      */
     public function __construct($field, $distance, array $coordinate = array())
     {
-        $this->geo_distance           = new stdClass();
+        $this->geo_distance = new stdClass();
         $this->geo_distance->distance = $distance;
 
         foreach ($coordinate as $name => $value) {
-            $fieldName                      = "{$field}.{$name}";
+            $fieldName = "{$field}.{$name}";
             $this->geo_distance->$fieldName = $value;
         }
     }

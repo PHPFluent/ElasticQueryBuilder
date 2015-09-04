@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
 use PHPFluent\ElasticQueryBuilder\Query;
 use PHPFluent\ElasticQueryBuilder\Term;
@@ -10,7 +10,7 @@ $builder->query()->filtered()->query()->match_all(new \stdClass());
 $builder->query()->filtered()->filter()->and(
     array(
         new Term('my.nested.label', 'my_value'),
-        new Term('my_label', 'other_value')
+        new Term('my_label', 'other_value'),
     )
 );
 

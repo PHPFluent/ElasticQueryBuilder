@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Copyright (c) 2013, PHPFluent.
  */
 namespace PHPFluent\ElasticQueryBuilder\Tests;
 
 /**
- * The Query Test
+ * The Query Test.
  *
  * @author Kinn Coelho Julião <kinncj@gmail.com>
  */
@@ -17,7 +18,7 @@ class QueryTest extends \PHPUnit_Framework_TestCase
     private $queryBuilder;
 
     /**
-     * {@inherit}
+     * {@inherit}.
      */
     public function setUp()
     {
@@ -27,15 +28,15 @@ class QueryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Should create an empty json
+     * Should create an empty json.
      */
     public function testShouldCreateAnEmptyJson()
     {
-        $this->assertEquals("{}", (string) $this->queryBuilder);
+        $this->assertEquals('{}', (string) $this->queryBuilder);
     }
 
     /**
-     * Should create a complex json
+     * Should create a complex json.
      */
     public function testShouldCreateComplexJson()
     {
@@ -46,7 +47,7 @@ class QueryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test functionally with Term
+     * Test functionally with Term.
      */
     public function testShouldCreateAnElasticQuery()
     {
@@ -54,8 +55,8 @@ class QueryTest extends \PHPUnit_Framework_TestCase
         $queryBuilder->query()->filtered()->query()->match_all(new \stdClass());
         $queryBuilder->query()->filtered()->filter()->and(
             array(
-                new \PHPFluent\ElasticQueryBuilder\Term("my.nested.label", "my_value"),
-                new \PHPFluent\ElasticQueryBuilder\Term("my_label", "other_value"),
+                new \PHPFluent\ElasticQueryBuilder\Term('my.nested.label', 'my_value'),
+                new \PHPFluent\ElasticQueryBuilder\Term('my_label', 'other_value'),
                 )
             );
 
