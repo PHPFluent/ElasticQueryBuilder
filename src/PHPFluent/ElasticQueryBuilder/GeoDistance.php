@@ -26,7 +26,7 @@ class GeoDistance
      * @param string $distance   The distance, eg: 20km
      * @param string $coordinate array("lat"=>222,"lon"=>-222)
      */
-    public function __construct($field, $distance, array $coordinate = array())
+    public function __construct($field, $distance, array $coordinate = [])
     {
         $this->geo_distance = new stdClass();
         $this->geo_distance->distance = $distance;
