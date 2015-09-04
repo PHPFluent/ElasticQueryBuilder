@@ -39,6 +39,14 @@ class Query implements JsonSerializable
             $data = $value[0];
         }
 
+        $field = preg_replace_callback(
+            '/[A-Z]/',
+            function ($match) {
+                return '_'.strtolower($match[0]);
+            },
+            $field
+        );
+
         if (!isset($this->properties[$field])) {
             $this->properties[$field] = $data;
         }
@@ -70,6 +78,6 @@ class Query implements JsonSerializable
      */
     public function __toString()
     {
-        return json_encode($this);
+        return json_encode($this, JSON_PRETTY_PRINT);
     }
 }

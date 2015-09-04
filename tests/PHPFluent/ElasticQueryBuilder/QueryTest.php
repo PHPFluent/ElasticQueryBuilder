@@ -51,6 +51,17 @@ class QueryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Should create an empty json.
+     */
+    public function testShouldConvertCammelCaseToUndescore()
+    {
+        $queryBuilder = clone $this->queryBuilder;
+        $queryBuilder->query()->matchAll(new \stdClass());
+
+        $this->assertEquals('{"query":{"match_all":{}}}', json_encode($queryBuilder));
+    }
+
+    /**
      * Should create a complex json.
      */
     public function testShouldCreateComplexJson()

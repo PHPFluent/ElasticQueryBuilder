@@ -24,7 +24,7 @@ composer require phpfluent/elastic-query-builder
 
 ```php
 $builder = new Query();
-$builder->query()->filtered()->query()->match_all(new \stdClass());
+$builder->query()->filtered()->query()->matchAll(new stdClass());
 $builder->query()->filtered()->filter()->and(
     [
         new Term('my.nested.label', 'my_value'),
@@ -33,4 +33,10 @@ $builder->query()->filtered()->filter()->and(
 );
 
 echo $builder.PHP_EOL;
+```
+
+
+The result of the code above is:
+```json
+{"query":{"filtered":{"query":{"match_all":{}},"filter":{"and":[{"term":{"my.nested.label":"my_value"}},{"term":{"my_label":"other_value"}}]}}}}
 ```
