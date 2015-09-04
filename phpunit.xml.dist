@@ -11,11 +11,11 @@
          verbose="false">
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="false">
-            <directory>../src/PHPFluent/</directory>
+            <directory>./src/</directory>
         </whitelist>
     </filter>
     <testsuite name="PHPFluent\ElasticQueryBuilder Test Suite">
-        <directory>tests/</directory>
+        <directory>./tests/</directory>
     </testsuite>
 </phpunit>
 

@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "PHPFluent\\": "src/PHPFluent/"
+            "PHPFluent\\ElasticQueryBuilder\\": "src/"
         }
     },
     "require": {
