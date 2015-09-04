@@ -40,6 +40,17 @@ class QueryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Should create an empty json.
+     */
+    public function testShouldSerializeAsJson()
+    {
+        $queryBuilder = clone $this->queryBuilder;
+        $queryBuilder->query()->filtered()->query()->match_all(new \stdClass());
+
+        $this->assertEquals('{"query":{"filtered":{"query":{"match_all":{}}}}}', json_encode($queryBuilder));
+    }
+
+    /**
      * Should create a complex json.
      */
     public function testShouldCreateComplexJson()

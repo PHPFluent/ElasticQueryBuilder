@@ -9,13 +9,21 @@
 
 namespace PHPFluent\ElasticQueryBuilder;
 
+use JsonSerializable;
+use stdClass;
+
 /**
  * A json builder.
  *
  * @author Kinn Coelho Julião <kinncj@gmail.com>
  */
-class Query
+class Query implements JsonSerializable
 {
+    /**
+     * @var array
+     */
+    private $properties = [];
+
     /**
      * Create nested objects and set its value.
      *
@@ -31,11 +39,28 @@ class Query
             $data = $value[0];
         }
 
-        if (!isset($this->$field)) {
-            $this->$field = $data;
+        if (!isset($this->properties[$field])) {
+            $this->properties[$field] = $data;
         }
 
-        return $this->$field;
+        return $this->properties[$field];
+    }
+
+    /**
+     * @return stdClass
+     */
+    public function jsonSerialize()
+    {
+        $data = new stdClass();
+        foreach ($this->properties as $name => $value) {
+            if ($value instanceof self) {
+                $value = $value->jsonSerialize();
+            }
+
+            $data->$name = $value;
+        }
+
+        return $data;
     }
 
     /**
